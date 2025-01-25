@@ -67,7 +67,9 @@ export default function Post({ data }) {
         </RecruitNumber>
       </PostBody>
       <TagWrapper>
-        <Tag />
+        {data.tags.map((label: string) => {
+          return <Tag label={label}></Tag>;
+        })}
       </TagWrapper>
     </PostWrapper>
   );

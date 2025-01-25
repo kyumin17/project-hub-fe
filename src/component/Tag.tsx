@@ -8,10 +8,10 @@ const Wrapper = styled.div`
   border-radius: 3px;
 `;
 
-export default function Post() {
+export default function Tag({ label }) {
   return (
     <Wrapper>
-      c++
+      {label}
     </Wrapper>
   );
 }

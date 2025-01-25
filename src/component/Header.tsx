@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import NoStyleLink from '../style/link';
+import NoStyleLink from '../style/LinkStyle';
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -46,9 +46,11 @@ const UserButton = styled.div`
 export default function Header() {
   return (
     <HeaderWrapper>
-      <Logo>
-        로고
-      </Logo>
+      <NoStyleLink to='/'>
+        <Logo>
+          로고
+        </Logo>
+      </NoStyleLink>
       <MenuBar>
         <NoStyleLink to='/write'>
           <MenuButton>
