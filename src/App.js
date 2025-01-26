@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<PostListPage />} />
-          <Route path='/:post_id' element={<PostPage />} />
+          <Route path='/post/:post_id' element={<PostPage />} />
           <Route path='/write' element={<PostCreatePage />} />
           <Route path='/notify' element={<NotificationPage />} />
           <Route path='/my' element={<MyPage />} />
