@@ -110,11 +110,10 @@ export default function PostPage() {
     }
 
     fetchPost();
-  }, []);
+  }, [postId]);
 
   async function enroll() {
     //등록
-    navigate('/');
   }
 
   return (
