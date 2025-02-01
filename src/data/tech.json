@@ -1,0 +1,99 @@
+{
+  "programming_language": [
+    "c",
+    "c++",
+    "c#",
+    "javascript",
+    "typescript",
+    "swift",
+    "kotlin",
+    "dart",
+    "python",
+    "java",
+    "go",
+    "ruby",
+    "php",
+    "rust",
+    "haskell",
+    "assembly"
+  ],
+  "frontend": [
+    "javascript",
+    "typescript",
+    "react",
+    "next.js",
+    "vue.js",
+    "angular",
+    "svelte",
+    "three.js",
+    "css",
+    "scss",
+    "tailwind css",
+    "bootstrap",
+    "styled components",
+    "emotion",
+    "redux",
+    "recoil",
+    "zustand",
+    "vuex",
+    "webpack",
+    "vite",
+    "esbuild",
+    "pwa"
+  ],
+  "backend": [
+    "java",
+    "javascript",
+    "python",
+    "spring boot",
+    "django",
+    "flask",
+    "express.js",
+    "nextjs",
+    "mysql",
+    "postgresql",
+    "mariadb",
+    "sqlite",
+    "mongodb",
+    "redis",
+    "rest api",
+    "graphql",
+    "websockets"
+  ],
+  "mobile": [
+    "swift",
+    "kotlin",
+    "react native",
+    "flutter"
+  ],
+  "devops": [
+    "aws",
+    "google cloud",
+    "microsoft azure",
+    "docker",
+    "github actions"
+  ],
+  "ml_dl": [
+    "python",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "tensorflow",
+    "pytorch",
+    "mlflow"
+  ],
+  "game": [
+    "c#",
+    "c++",
+    "unreal engine",
+    "godot"
+  ],
+  "security": [
+    "owasp",
+    "jwt",
+    "oauth2",
+    "ssl/tsl",
+    "https",
+    "waf"
+  ]
+}

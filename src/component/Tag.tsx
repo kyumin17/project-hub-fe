@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const TagWrapper = styled.div`
   background-color: #E9F6FF;
   color: #3E7BFF;
   display: inline;
@@ -10,8 +10,8 @@ const Wrapper = styled.div`
 
 export default function Tag({ label }) {
   return (
-    <Wrapper>
+    <TagWrapper>
       {label}
-    </Wrapper>
+    </TagWrapper>
   );
 }
