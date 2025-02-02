@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import EmailSelectButton from './assets/EmailSelectButton';
 import NoStyleLink from '../../style/LinkStyle';
 import { useNavigate } from 'react-router-dom';
+import NotificationCheckBox from '../../component/NotificationCheckBox';
 
 const SignupPageWrapper = styled.div`
   padding: 10vh 30vw 0;
@@ -26,6 +27,7 @@ const InputWrapper = styled.div`
   grid-template-columns: 1fr 3fr;
   padding: 1.3rem 0;
   align-items: center;
+  position: relative;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid #D9D9D9;
@@ -98,19 +100,6 @@ const Emph = styled.span`
   }
 `;
 
-const CheckBoxWrapper = styled.label`
-  position: absolute;
-  left: 25%;
-  color: #626262;
-  margin-top: 4.7rem;
-  font-size: 0.8rem;
-`;
-
-const NotificationCheckBox = styled.input`
-  margin-left: 0;
-  margin-right: 8px;
-`;
-
 export default function SignupPage() {
   const navigate = useNavigate();
 
@@ -165,14 +154,13 @@ export default function SignupPage() {
           <Label>
             이메일
           </Label>
-          <EmailBox>
-            <InputBox type='text' />
-            <EmailSelectButton />
-          </EmailBox>
-          <CheckBoxWrapper>
-            <NotificationCheckBox type='checkbox' />
-            이메일로 내가 관심있어 할 만한 모집글에 대한 알람을 받습니다
-          </CheckBoxWrapper>
+          <div>
+            <EmailBox>
+              <InputBox type='text' />
+              <EmailSelectButton />
+            </EmailBox>
+            <NotificationCheckBox />
+          </div>
         </InputWrapper>
       </Form>
       <JoinButtonWrapper>

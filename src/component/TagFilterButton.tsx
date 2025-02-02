@@ -27,7 +27,7 @@ const TagFilterButtonWrapper = styled.button`
   display: flex;
   gap: 6px;
   align-items: center;
-  padding: 6px 10px;
+  padding: 5px 8px;
   border-radius: 4px;
 `;
 
@@ -51,6 +51,7 @@ const OptionBox = styled.div<OptionBoxProps>`
   padding: 1rem;
   border: 1px solid #8D8D8D;
   border-radius: 4px;
+  z-index: 1;
 `;
 
 const OptionWrapper = styled.div`

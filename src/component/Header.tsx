@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import NoStyleLink from '../style/LinkStyle';
+import UserMenu from './UserMenu';
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -33,16 +34,6 @@ const MenuButton = styled.div`
   }
 `;
 
-// 나중에 이미지로 변경
-const UserButton = styled.div`
-  height: 28px;
-  width: 28px;
-  border-radius: 1rem;
-  background-color: #D9D9D9;
-  line-height: 25px;
-  text-align: center;
-`;
-
 export default function Header() {
   return (
     <HeaderWrapper>
@@ -62,9 +53,7 @@ export default function Header() {
             알림
           </MenuButton>
         </NoStyleLink>
-        <UserButton>
-          u
-        </UserButton>
+        <UserMenu />
       </MenuBar>
     </HeaderWrapper>
   );
