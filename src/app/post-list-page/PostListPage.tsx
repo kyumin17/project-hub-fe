@@ -23,7 +23,7 @@ const PaginationWrapper = styled.div`
 
 export default function PostListPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const {data: postList, loading, error} = useFetch('/post');
+  const {data: postList, loading, error} = useFetch(`/post?page=${currentPage}`);
   
   return (
     <>
@@ -31,7 +31,7 @@ export default function PostListPage() {
       <SubBar />
       <PostList>
         {postList && postList.map((data: PostProps) => {
-          return (<Post key={data.id} data={data} />);
+          return <Post key={data.id} data={data} />;
         })}
       </PostList>
       <PaginationWrapper>
