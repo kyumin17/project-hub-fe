@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Tag from './Tag';
-import NoStyleLink from '../style/LinkStyle';
+import NoStyleLink from '../styles/LinkStyle';
 
 const PostWrapper = styled.div`
   border: 0.5px solid #828282;

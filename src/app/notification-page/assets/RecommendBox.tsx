@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Tag from '../../../component/Tag';
 import { BoxWrapper, Content, PostType, PostTitle } from '../style/BoxStyle';
-import NoStyleLink from '../../../style/LinkStyle';
+import NoStyleLink from '../../../styles/LinkStyle';
 
 const Title = styled.div`
   font-size: 1.2rem;
@@ -32,7 +32,7 @@ export default function RecommendBox({ data }) {
         </Content>
         <TagWrapper>
           {data.tags.map((label: string) => {
-            return <Tag label={label}></Tag>;
+            return <Tag label={label} key={label}></Tag>;
           })}
         </TagWrapper>
       </BoxWrapper>

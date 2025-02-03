@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import NoStyleLink from '../style/LinkStyle';
+import NoStyleLink from '../styles/LinkStyle';
 
 interface UserMenuWrapperProps {
   isshow: boolean;

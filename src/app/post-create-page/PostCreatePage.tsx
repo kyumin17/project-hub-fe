@@ -3,7 +3,7 @@ import Header from '../../component/Header';
 import TagFilterButton from '../../component/TagFilterButton';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import http from '../../api/http';
+import usePost from '../../hooks/usePost';
 
 interface TypeProps {
   isselect: boolean;
@@ -91,12 +91,15 @@ export default function PostCreatePage() {
   const [postType, setPostType] = useState('프로젝트');
   const navigate = useNavigate();
   const [techList, setTechList] = useState([]);
+  const [form, setForm] = useState(null);
 
   const titleRef = useRef(null);
   const recruitNumRef = useRef(null);
   const contentRef = useRef(null);
 
-  async function register() {
+  usePost('/post', form);
+
+  async function useRegister() {
     const title = titleRef.current.value;
     const content = contentRef.current.value;
     let recruitNum = recruitNumRef.current.value;
@@ -115,7 +118,7 @@ export default function PostCreatePage() {
       return;
     }
 
-    const form = {
+    setForm({
       type: postType,
       title: title,
       author: 'name',
@@ -125,14 +128,7 @@ export default function PostCreatePage() {
       current_recruit: 0,
       content: content,
       comments: []
-    };
-
-    try {
-      await http.post('/post', form);
-    } catch (error) {
-      console.log(error);
-      return;
-    }
+    });
 
     navigate('/');
   }
@@ -161,7 +157,7 @@ export default function PostCreatePage() {
           </SelectDetail>
         </PostInfo>
         <WritingArea placeholder='자신의 프로젝트를 소개해 주세요' spellCheck='false' ref={contentRef} />
-        <RegisterButton onClick={register}>
+        <RegisterButton onClick={useRegister}>
           등록하기
         </RegisterButton>
       </PostCreatePageWrapper>

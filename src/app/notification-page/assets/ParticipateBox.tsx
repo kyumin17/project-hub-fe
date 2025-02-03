@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BoxWrapper, Content, PostType, PostTitle } from '../style/BoxStyle';
-import NoStyleLink from '../../../style/LinkStyle';
+import NoStyleLink from '../../../styles/LinkStyle';
 
 const Title = styled.div`
   font-size: 1.2rem;

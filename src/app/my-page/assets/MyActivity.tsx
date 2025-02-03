@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { Label, Body } from '../style/MyPageStyle';
 import Post from '../../../component/Post';
-import { useEffect, useState } from 'react';
-import http from '../../../api/http';
+import { useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import { PostProps } from '../../../types/post';
 
 interface ActivityBodyProps {
   isshow: boolean;
@@ -33,25 +34,9 @@ const DownIcon = styled.img`
   height: 15px;
 `;
 
-export default function MyActivity() {
-  const [writeList, setWriteList] = useState([]);
-  const [joinList, setJoinList] = useState([]);
+export default function MyActivity({ writeList, joinList }) {
   const [isWriteShow, setIsWriteShow] = useState(true);
   const [isJoinShow, setIsJoinShow] = useState(true);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await http.get('/users/4810');
-        setWriteList(res.data.write);
-        setJoinList(res.data.join);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchData();
-  }, []);
 
   return (
     <div>
@@ -65,7 +50,7 @@ export default function MyActivity() {
             <DownIcon src={isWriteShow ? '/img/down-icon.png' : '/img/up-icon.png'} alt='' />
           </ActivityHeader>
           <ActivityBody isshow={isWriteShow}>
-            {writeList && writeList.map((data) => {
+            {writeList && writeList.map((data: PostProps[]) => {
               return <Post data={data} />;
             })}
           </ActivityBody>
@@ -76,7 +61,7 @@ export default function MyActivity() {
             <DownIcon src={isJoinShow ? '/img/down-icon.png' : '/img/up-icon.png'} alt='' />
           </ActivityHeader>
           <ActivityBody isshow={isJoinShow}>
-            {joinList && joinList.map((data) => {
+            {joinList && joinList.map((data: PostProps[]) => {
               return <Post data={data} />;
             })}
           </ActivityBody>

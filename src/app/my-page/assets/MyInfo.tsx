@@ -34,7 +34,7 @@ const Info = styled.div`
   }
 `;
 
-export default function MyInfo() {
+export default function MyInfo({ id, email, schoolMail }) {
   return (
     <div>
       <Label>
@@ -47,15 +47,15 @@ export default function MyInfo() {
         <div>
           <Info>
             <div className='info-label'>아이디</div>
-            <div>thisisid</div>
+            <div>{ id }</div>
           </Info>
           <Info>
             <div className='info-label'>이메일</div>
-            <div>sample@gmail.com</div>
+            <div>{ email }</div>
           </Info>
           <Info>
             <div className='info-label'>학교메일</div>
-            <div>sample@sogang.ac.kr</div>
+            <div>{ schoolMail }</div>
           </Info>
         </div>
       </Body>

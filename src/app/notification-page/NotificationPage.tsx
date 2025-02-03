@@ -3,34 +3,22 @@ import Header from '../../component/Header';
 import RegisterBox from './assets/RegisterBox';
 import RecommendBox from './assets/RecommendBox';
 import ParticipateBox from './assets/ParticipateBox';
-import { useEffect, useState } from 'react';
-import http from '../../api/http';
+import useAuth from '../../hooks/useAuth';
+import { NotificationProps } from '../../types/notification';
 
 const NotificationBoxWrapper = styled.div`
   margin: 0 6vw;
 `;
 
 export default function NotificationPage() {
-  const [notificationList, setNotificationList] = useState([]);
-
-  useEffect(() => {
-    const fetchNotification = async() => {
-      try {
-        const res = await http.get('/users/4810');
-        setNotificationList(res.data.notification);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchNotification();
-  }, []);
+  const { user } = useAuth();
+  const notificationList = user && user.notifications;
 
   return (
     <>
       <Header />
       <NotificationBoxWrapper>
-        {notificationList && notificationList.map((data) => {
+        {notificationList && notificationList.map((data: NotificationProps) => {
           if (data.type === '신청') {
             return <RegisterBox data={data}></RegisterBox>;
           } else if (data.type === '추천') {

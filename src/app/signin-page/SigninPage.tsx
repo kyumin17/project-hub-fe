@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import NoStyleLink from '../../style/LinkStyle';
+import NoStyleLink from '../../styles/LinkStyle';
 import EasyLoginBox from './assets/EasyLoginBox';
 import { useNavigate } from 'react-router-dom';
 

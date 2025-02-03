@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import EmailSelectButton from './assets/EmailSelectButton';
-import NoStyleLink from '../../style/LinkStyle';
+import NoStyleLink from '../../styles/LinkStyle';
 import { useNavigate } from 'react-router-dom';
 import NotificationCheckBox from '../../component/NotificationCheckBox';
 

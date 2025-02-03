@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import Header from '../../component/Header';
 import Tag from '../../component/Tag';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import http from '../../api/http';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import useFetch from '../../hooks/useFetch';
 
 const PostPageWrapper = styled.div`
   padding: 0 6vw;
@@ -95,22 +95,9 @@ const EnrollButton = styled.button`
 
 export default function PostPage() {
   const postId = useParams().post_id;
-  const [post, setPost] = useState(null);
   const [isRegisterShow, setIsRegisterShow] = useState(false);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchPost = async() => {
-      try {
-        const res = await http.get(`/post/${postId}`);
-        setPost(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchPost();
-  }, [postId]);
+  const {data: post, loading, error} = useFetch(`/post/${postId}`);
 
   async function enroll() {
     //등록
