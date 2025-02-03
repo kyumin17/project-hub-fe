@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useFetch from '../../../hooks/useFetch';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface PaginationWrapperProps {
   isshow: boolean;
@@ -46,11 +46,15 @@ const PageMoveButton = styled.div<PageMoveButtonProps>`
 
 export default function Pagination({ currentPage, setCurrentPage }) {
   const {data: totalPage, loading, error} = useFetch('/total_page');
+  const paginationLimit = 7;
   const [basePage, setBasePage] = useState(1);
   const [isPrevShow, setIsPrevShow] = useState(false);
-  const [isNextShow, setIsNextShow] = useState(true);
-  const paginationLimit = 7;
+  const [isNextShow, setIsNextShow] = useState(false);
   const pageList = Array.from({ length: Math.min(totalPage, paginationLimit) }, (_, index) => index + basePage);
+
+  useEffect(() => {
+    setIsNextShow(totalPage && totalPage > paginationLimit);
+  }, [totalPage]);
 
   function updatePageButtonShow(nextBasePage: number) {
     setIsPrevShow(true);
@@ -67,6 +71,9 @@ export default function Pagination({ currentPage, setCurrentPage }) {
 
   function updatePage(page: number, basePage: number) {
     setCurrentPage(page);
+
+    if (totalPage <= paginationLimit) return;
+
     setBasePage(basePage);
     updatePageButtonShow(basePage);
     document.documentElement.scrollTop = 0;
