@@ -9,8 +9,10 @@ export default function useFetch(url: string) {
   useEffect(() => {
     const fetchData = async() => {
       try {
-        const res = await http.get(url);
-        setData(res.data);
+        if (url) {
+          const res = await http.get(url);
+          setData(res.data);
+        }
       } catch (error) {
         setError(error);
       } finally {
