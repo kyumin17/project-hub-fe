@@ -3,6 +3,8 @@ import EmailSelectButton from './assets/EmailSelectButton';
 import NoStyleLink from '../../styles/LinkStyle';
 import { useNavigate } from 'react-router-dom';
 import NotificationCheckBox from '../../component/NotificationCheckBox';
+import AlertBox from '../../component/AlertBox';
+import { useState } from 'react';
 
 const SignupPageWrapper = styled.div`
   padding: 10vh 30vw 0;
@@ -103,8 +105,11 @@ const Emph = styled.span`
 export default function SignupPage() {
   const navigate = useNavigate();
 
+  const [isSuccessShow, setIsSuccessShow] = useState(false);
+
   function join() {
-    navigate('/signin');
+    setIsSuccessShow(true);
+    setTimeout(() => {navigate('/signin')}, 800);
   }
 
   function cancel() {
@@ -176,6 +181,7 @@ export default function SignupPage() {
           이미 계정이 있으신가요? <Emph>로그인 하러가기</Emph>
         </HasAccount>
       </NoStyleLink>
+      <AlertBox text='가입이 완료되었습니다' type='success' isShow={isSuccessShow} setIsShow={setIsSuccessShow} />
     </SignupPageWrapper>
   );
 }

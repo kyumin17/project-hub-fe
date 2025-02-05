@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { BoxWrapper, Content, PostType, PostTitle } from '../style/BoxStyle';
-import NoStyleLink from '../../../styles/LinkStyle';
+import AlertBox from '../../../component/AlertBox';
+import { useState } from 'react';
 
 const Title = styled.div`
   font-size: 1.2rem;
@@ -47,8 +48,14 @@ const RejectButton = styled.button`
 `;
 
 export default function RegisterBox({ data }) {
+  const [isAlertShow, setIsAlertShow] = useState(false);
+
+  function accept() {
+    setIsAlertShow(true);
+  }
+
   return (
-    <NoStyleLink to={`/post/${data.post_id}`}>
+    <>
       <BoxWrapper isRead={data.is_read}>
         <Title>
           신청
@@ -73,7 +80,7 @@ export default function RegisterBox({ data }) {
           </RegisterMessage>
         </Detail>
         <Select>
-          <AcceptButton>
+          <AcceptButton onClick={accept}>
             수락하기
           </AcceptButton>
           <RejectButton>
@@ -81,6 +88,7 @@ export default function RegisterBox({ data }) {
           </RejectButton>
         </Select>
       </BoxWrapper>
-    </NoStyleLink>
+      <AlertBox text={'수락이 완료되었습니다'} type='success' isShow={isAlertShow} setIsShow={setIsAlertShow} />
+    </>
   );
 }

@@ -4,6 +4,7 @@ import TagFilterButton from '../../component/TagFilterButton';
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import usePost from '../../hooks/usePost';
+import AlertBox from '../../component/AlertBox';
 
 interface TypeProps {
   isselect: boolean;
@@ -92,6 +93,9 @@ export default function PostCreatePage() {
   const navigate = useNavigate();
   const [techList, setTechList] = useState([]);
   const [form, setForm] = useState(null);
+  const [isSuccessShow, setIsSuccessShow] = useState(false);
+  const [isErrorShow, setIsErrorShow] = useState(false);
+  const [errorText, setErrorText] = useState(null);
 
   const titleRef = useRef(null);
   const recruitNumRef = useRef(null);
@@ -105,7 +109,8 @@ export default function PostCreatePage() {
     let recruitNum = recruitNumRef.current.value;
 
     if (!title || !content) {
-      alert('모든 칸을 채워주세요');
+      setIsErrorShow(true);
+      setErrorText('모든 칸을 채워주세요');
       return;
     }
 
@@ -114,7 +119,8 @@ export default function PostCreatePage() {
     }
 
     if (recruitNum < 0) {
-      alert('모집 인원의 형식이 적절하지 않습니다');
+      setIsErrorShow(true);
+      setErrorText('모집 인원의 형식이 적절하지 않습니다');
       return;
     }
 
@@ -130,7 +136,8 @@ export default function PostCreatePage() {
       comments: []
     });
 
-    navigate('/');
+    setIsSuccessShow(true);
+    setTimeout(() => {navigate('/')}, 800);
   }
 
   return (
@@ -161,6 +168,8 @@ export default function PostCreatePage() {
           등록하기
         </RegisterButton>
       </PostCreatePageWrapper>
+      <AlertBox text='모집글이 등록되었습니다' type='success' isShow={isSuccessShow} setIsShow={setIsSuccessShow} />
+      <AlertBox text={errorText} type='error' isShow={isErrorShow} setIsShow={setIsErrorShow} />
     </>
   );
 }
