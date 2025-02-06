@@ -27,19 +27,17 @@
     "svelte",
     "three.js",
     "css",
-    "scss",
+    "sass",
     "tailwind css",
     "bootstrap",
     "styled components",
-    "emotion",
     "redux",
     "recoil",
     "zustand",
     "vuex",
     "webpack",
     "vite",
-    "esbuild",
-    "pwa"
+    "esbuild"
   ],
   "backend": [
     "java",
@@ -49,29 +47,21 @@
     "django",
     "flask",
     "express.js",
-    "nextjs",
+    "next.js",
     "mysql",
     "postgresql",
     "mariadb",
     "sqlite",
     "mongodb",
     "redis",
-    "rest api",
     "graphql",
-    "websockets"
+    "websocket"
   ],
   "mobile": [
     "swift",
     "kotlin",
     "react native",
     "flutter"
-  ],
-  "devops": [
-    "aws",
-    "google cloud",
-    "microsoft azure",
-    "docker",
-    "github actions"
   ],
   "ml_dl": [
     "python",
@@ -86,14 +76,11 @@
     "c#",
     "c++",
     "unreal engine",
-    "godot"
+    "unity"
   ],
   "security": [
     "owasp",
     "jwt",
-    "oauth2",
-    "ssl/tsl",
-    "https",
-    "waf"
+    "oauth2"
   ]
 }

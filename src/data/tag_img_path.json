@@ -1,0 +1,179 @@
+{
+  "c": {
+    "path": "c.png"
+  },
+  "c++": {
+    "path": "cpp.png"
+  },
+  "c#": {
+    "path": "cs.png"
+  },
+  "javascript": {
+    "path": "js.png"
+  },
+  "typescript": {
+    "path": "ts.png"
+  },
+  "swift": {
+    "path": "swift.png"
+  },
+  "kotlin": {
+    "path": "kotlin.png"
+  },
+  "dart": {
+    "path": "dart.png"
+  },
+  "python": {
+    "path": "python.png"
+  },
+  "java": {
+    "path": "java.png"
+  },
+  "go": {
+    "path": "go.png"
+  },
+  "ruby": {
+    "path": "ruby.png"
+  },
+  "php": {
+    "path": "php.png"
+  },
+  "rust": {
+    "path": "rust.png"
+  },
+  "haskell": {
+    "path": "haskell.png"
+  },
+  "assembly": {
+    "path": "assembly.png"
+  },
+  "react": {
+    "path": "react.png"
+  },
+  "next.js": {
+    "path": "next.png"
+  },
+  "vue.js": {
+    "path": "vue.png"
+  },
+  "angular": {
+    "path": "angular.png"
+  },
+  "svelte": {
+    "path": "svelte.png"
+  },
+  "three.js": {
+    "path": "three.png"
+  },
+  "css": {
+    "path": "css.png"
+  },
+  "sass": {
+    "path": "sass.png"
+  },
+  "tailwind css": {
+    "path": "tailwind.png"
+  },
+  "bootstrap": {
+    "path": "bootstrap.png"
+  },
+  "styled components": {
+    "path": "styled_components.png"
+  },
+  "redux": {
+    "path": "redux.png"
+  },
+  "recoil": {
+    "path": "recoil.svg"
+  },
+  "zustand": {
+    "path": "zustand.svg"
+  },
+  "vuex": {
+    "path": "vuex.png"
+  },
+  "webpack": {
+    "path": "webpack.png"
+  },
+  "vite": {
+    "path": "vite.png"
+  },
+  "esbuild": {
+    "path": "esbuild.png"
+  },
+  "spring boot": {
+    "path": "spring.png"
+  },
+  "django": {
+    "path": "django.svg"
+  },
+  "flask": {
+    "path": "flask.png"
+  },
+  "express.js": {
+    "path": "express.png"
+  },
+  "mysql": {
+    "path": "mysql.png"
+  },
+  "postgresql": {
+    "path": "postgresql.png"
+  },
+  "mariadb": {
+    "path": "mariadb.svg"
+  },
+  "sqlite": {
+    "path": "sqlite.png"
+  },
+  "mongodb": {
+    "path": "mongodb.svg"
+  },
+  "redis": {
+    "path": "redis.webp"
+  },
+  "graphql": {
+    "path": "graphql.png"
+  },
+  "websocket": {
+    "path": "websocket.png"
+  },
+  "react native": {
+    "path": "react.png"
+  },
+  "flutter": {
+    "path": "flutter.png"
+  },
+  "pandas": {
+    "path": "pandas.png"
+  },
+  "numpy": {
+    "path": "numpy.png"
+  },
+  "matplotlib": {
+    "path": "matplotlib.png"
+  },
+  "tensorflow": {
+    "path": "tensorflow.png"
+  },
+  "pytorch": {
+    "path": "pytorch.png"
+  },
+  "mlflow": {
+    "path": "mlflow.svg"
+  },
+  "unreal engine": {
+    "path": "unreal_engine.png"
+  },
+  "unity": {
+    "path": "unity.png"
+  },
+  "owasp": {
+    "path": "owasp.png"
+  },
+  "jwt": {
+    "path": "jwt.png"
+  },
+  "oauth2": {
+    "path": "oauth2.png"
+  }
+}
