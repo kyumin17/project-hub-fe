@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const CheckBoxLabel = styled.label`
-  position: absolute;
   color: #626262;
   font-size: 0.8rem;
-  margin-top: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 const CheckBoxInput = styled.input`

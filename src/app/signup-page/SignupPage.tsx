@@ -4,10 +4,15 @@ import NoStyleLink from '../../styles/LinkStyle';
 import { useNavigate } from 'react-router-dom';
 import NotificationCheckBox from '../../component/NotificationCheckBox';
 import AlertBox from '../../component/AlertBox';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+interface AlertProps {
+  isshow: boolean;
+  iswrite: boolean;
+};
 
 const SignupPageWrapper = styled.div`
-  padding: 10vh 30vw 0;
+  padding: 10vh 30vw 5vh;
 `;
 
 const Title = styled.div`
@@ -102,10 +107,49 @@ const Emph = styled.span`
   }
 `;
 
+const AlertWrapper = styled.div`
+  margin-top: 6px;
+`;
+
+const Alert = styled.div<AlertProps>`
+  color: ${(props) => (props.iswrite ? '#F50000' : '#626262')};
+  display: ${(props) => (props.isshow ? 'inherit' : 'none')};
+  font-size: 0.8rem;
+`;
+
 export default function SignupPage() {
   const navigate = useNavigate();
+  const [password, setPassword] = useState('');
+  const [checkPassword, setCheckPassword] = useState('');
+  const validWord = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '~', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+', '=', '`', '|', '\\', '(', ')', '{', '}', '[', ']', ':', ';', '"', "'", '<', '>', ',', '.', '?', '/'];
 
   const [isSuccessShow, setIsSuccessShow] = useState(false);
+  const [isLengthSatisfy, setIsLengthSatisfy] = useState(false);
+  const [isWordSatisfy, setIsWordSatisfy] = useState(false);
+  const [isCheckSatisfy, setIsCheckSatisfy] = useState(false);
+
+  useEffect(() => {
+    if (password.length >= 8) {
+      setIsLengthSatisfy(true);
+    } else {
+      setIsLengthSatisfy(false);
+    }
+
+    let isValid = false;
+    for (let i of validWord) {
+      if (password.includes(i)) {
+        isValid = true;
+        setIsWordSatisfy(true);
+        break;
+      }
+    }
+
+    setIsWordSatisfy(isValid);
+  }, [password]);
+
+  useEffect(() => {
+    setIsCheckSatisfy(password === checkPassword);
+  }, [password, checkPassword]);
 
   function join() {
     setIsSuccessShow(true);
@@ -135,13 +179,22 @@ export default function SignupPage() {
           <Label>
             비밀번호
           </Label>
-          <InputBox type='password' />
+          <InputBox type='password' value={password} onChange={(e) => setPassword(e.target.value)} maxLength={127} />
+          <div></div>
+          <AlertWrapper>
+            <Alert isshow={!isLengthSatisfy} iswrite={password ? true : false}>최소 8자 이상이어야 합니다.</Alert>
+            <Alert isshow={!isWordSatisfy} iswrite={password ? true : false}>숫자 혹은 특수문자가 포함되어 있어야 합니다.</Alert>
+          </AlertWrapper>
         </InputWrapper>
         <InputWrapper>
           <Label>
             비밀번호 확인
           </Label>
-          <InputBox type='password' />
+          <InputBox type='password' value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} />
+          <div></div>
+          <AlertWrapper>
+            <Alert isshow={checkPassword && !isCheckSatisfy} iswrite={checkPassword ? true : false}>비밀번호가 일치하지 않습니다.</Alert>
+          </AlertWrapper>
         </InputWrapper>
         <InputWrapper>
           <Label>
@@ -159,13 +212,12 @@ export default function SignupPage() {
           <Label>
             이메일
           </Label>
-          <div>
-            <EmailBox>
-              <InputBox type='text' />
-              <EmailSelectButton />
-            </EmailBox>
-            <NotificationCheckBox />
-          </div>
+          <EmailBox>
+            <InputBox type='text' />
+            <EmailSelectButton />
+          </EmailBox>
+          <div></div>
+          <NotificationCheckBox />
         </InputWrapper>
       </Form>
       <JoinButtonWrapper>
