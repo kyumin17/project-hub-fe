@@ -75,9 +75,8 @@ const OptionType = styled.div<OptionTypeProps>`
 
 export default function TagFilterButton({ techList, setTechList }) {
   const [isOptionShow, setIsOptionShow] = useState(false);
-  const optionTypeList = ['프로그래밍 언어', '프론트엔드', '백엔드', '앱', '인공지능', '게임', '보안'];
+  const optionTypeList: string[] = ['프로그래밍 언어', '프론트엔드', '백엔드', '앱', '인공지능', '게임', '보안'];
   const [selectType, setSelectType] = useState('프로그래밍 언어');
-
   const [techOptions, setTechOptions] = useState(data.programming_language);
 
   function select(type: string) {
@@ -107,7 +106,7 @@ export default function TagFilterButton({ techList, setTechList }) {
           <Label>기술 선택</Label>
           <DownIcon src='/img/down-icon.png' alt='more' />
         </TagFilterButtonWrapper>
-        {techList && techList.map((tech) => {
+        {techList && techList.map((tech: string) => {
           return <Tag label={tech} />;
         })}
       </TagFilterWrapper>

@@ -23,12 +23,16 @@ const TagIcon = styled.img`
 `;
 
 export default function ToggleTag({ label, techList, setTechList }) {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(techList.includes(label));
   const path = `/img/tag/${data[label].path}`;
 
   function activateTag() {
+    if (isActive) {
+      setTechList(techList.filter((value: string) => value !== label));
+    } else {
+      setTechList([...techList, label]);
+    }
     setIsActive(!isActive);
-    setTechList([...techList, label]);
   }
 
   return (
