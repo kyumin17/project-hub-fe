@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import data from '../data/tag_img_path.json';
+import tagData from '../data/tag_style.json';
+import colorData from '../data/tag_color.json';
 
 const TagWrapper = styled.div`
   display: flex;
@@ -7,18 +8,18 @@ const TagWrapper = styled.div`
   border-radius: 3px;
   align-items: center;
   gap: 8px;
-  border: 1px solid #bebebe;
 `;
 
 const TagIcon = styled.img`
-  height: 18px;
+  height: 16px;
 `;
 
 export default function Tag({ label }) {
-  const path = `/img/tag/${data[label].path}`;
+  const path = `/img/tag/${tagData[label].path}`;
+  const color = tagData[label].color;
 
   return (
-    <TagWrapper>
+    <TagWrapper style={{color: colorData[color].color, backgroundColor: colorData[color].bgcolor}}>
       <TagIcon src={path} alt='' />
       {label}
     </TagWrapper>

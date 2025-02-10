@@ -1,0 +1,38 @@
+{
+  "red": {
+    "color": "#e01d1d",
+    "bgcolor": "#ffdede"
+  },
+  "orange": {
+    "color": "#f77f3e",
+    "bgcolor": "#fff1de"
+  },
+  "yellow": {
+    "color": "#595959",
+    "bgcolor": "#fffede"
+  },
+  "green": {
+    "color": "#41945e",
+    "bgcolor": "#deffed"
+  },
+  "blue": {
+    "color": "#3681c7",
+    "bgcolor": "#def2ff"
+  },
+  "purple": {
+    "color": "#7e5ebf",
+    "bgcolor": "#e8deff"
+  },
+  "grey": {
+    "color": "#2e2e2e",
+    "bgcolor": "#f0f0f0"
+  },
+  "pink": {
+    "color": "#b85a92",
+    "bgcolor": "#ffdeed"
+  },
+  "brown": {
+    "color": "#87735d",
+    "bgcolor": "#f2e4d5"
+  }
+}

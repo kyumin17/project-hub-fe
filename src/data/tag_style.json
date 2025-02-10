@@ -1,0 +1,238 @@
+{
+  "c": {
+    "path": "c.png",
+    "color": "blue"
+  },
+  "c++": {
+    "path": "cpp.png",
+    "color": "blue"
+  },
+  "c#": {
+    "path": "cs.png",
+    "color": "purple"
+  },
+  "javascript": {
+    "path": "js.png",
+    "color": "yellow"
+  },
+  "typescript": {
+    "path": "ts.png",
+    "color": "blue"
+  },
+  "swift": {
+    "path": "swift.png",
+    "color": "orange"
+  },
+  "kotlin": {
+    "path": "kotlin.png",
+    "color": "purple"
+  },
+  "dart": {
+    "path": "dart.png",
+    "color": "blue"
+  },
+  "python": {
+    "path": "python.png",
+    "color": "blue"
+  },
+  "java": {
+    "path": "java.png",
+    "color": "orange"
+  },
+  "go": {
+    "path": "go.png",
+    "color": "blue"
+  },
+  "ruby": {
+    "path": "ruby.png",
+    "color": "red"
+  },
+  "php": {
+    "path": "php.png",
+    "color": "purple"
+  },
+  "rust": {
+    "path": "rust.png",
+    "color": "orange"
+  },
+  "haskell": {
+    "path": "haskell.png",
+    "color": "purple"
+  },
+  "assembly": {
+    "path": "assembly.png",
+    "color": "purple"
+  },
+  "react": {
+    "path": "react.png",
+    "color": "blue"
+  },
+  "next.js": {
+    "path": "next.png",
+    "color": "grey"
+  },
+  "vue.js": {
+    "path": "vue.png",
+    "color": "green"
+  },
+  "angular": {
+    "path": "angular.png",
+    "color": "red"
+  },
+  "svelte": {
+    "path": "svelte.png",
+    "color": "orange"
+  },
+  "three.js": {
+    "path": "three.png",
+    "color": "grey"
+  },
+  "css": {
+    "path": "css.png",
+    "color": "blue"
+  },
+  "sass": {
+    "path": "sass.png",
+    "color": "pink"
+  },
+  "tailwind css": {
+    "path": "tailwind.png",
+    "color": "blue"
+  },
+  "bootstrap": {
+    "path": "bootstrap.png",
+    "color": "purple"
+  },
+  "styled components": {
+    "path": "styled_components.png",
+    "color": "pink"
+  },
+  "redux": {
+    "path": "redux.png",
+    "color": "purple"
+  },
+  "recoil": {
+    "path": "recoil.svg",
+    "color": "blue"
+  },
+  "zustand": {
+    "path": "zustand.svg",
+    "color": "brown"
+  },
+  "vuex": {
+    "path": "vuex.png",
+    "color": "green"
+  },
+  "webpack": {
+    "path": "webpack.png",
+    "color": "blue"
+  },
+  "vite": {
+    "path": "vite.png",
+    "color": "purple"
+  },
+  "esbuild": {
+    "path": "esbuild.png",
+    "color": "yellow"
+  },
+  "spring boot": {
+    "path": "spring.png",
+    "color": "green"
+  },
+  "django": {
+    "path": "django.svg",
+    "color": "green"
+  },
+  "flask": {
+    "path": "flask.png",
+    "color": "grey"
+  },
+  "express.js": {
+    "path": "express.png",
+    "color": "grey"
+  },
+  "mysql": {
+    "path": "mysql.png",
+    "color": "blue"
+  },
+  "postgresql": {
+    "path": "postgresql.png",
+    "color": "blue"
+  },
+  "mariadb": {
+    "path": "mariadb.svg",
+    "color": "blue"
+  },
+  "sqlite": {
+    "path": "sqlite.png",
+    "color": "blue"
+  },
+  "mongodb": {
+    "path": "mongodb.svg",
+    "color": "green"
+  },
+  "redis": {
+    "path": "redis.webp",
+    "color": "red"
+  },
+  "graphql": {
+    "path": "graphql.png",
+    "color": "pink"
+  },
+  "websocket": {
+    "path": "websocket.png",
+    "color": "grey"
+  },
+  "react native": {
+    "path": "react.png",
+    "color": "blue"
+  },
+  "flutter": {
+    "path": "flutter.png",
+    "color": "blue"
+  },
+  "pandas": {
+    "path": "pandas.png",
+    "color": "purple"
+  },
+  "numpy": {
+    "path": "numpy.png",
+    "color": "blue"
+  },
+  "matplotlib": {
+    "path": "matplotlib.png",
+    "color": "orange"
+  },
+  "tensorflow": {
+    "path": "tensorflow.png",
+    "color": "orange"
+  },
+  "pytorch": {
+    "path": "pytorch.png",
+    "color": "orange"
+  },
+  "mlflow": {
+    "path": "mlflow.svg",
+    "color": "blue"
+  },
+  "unreal engine": {
+    "path": "unreal_engine.png",
+    "color": "grey"
+  },
+  "unity": {
+    "path": "unity.png",
+    "color": "grey"
+  },
+  "owasp": {
+    "path": "owasp.png",
+    "color": "purple"
+  },
+  "jwt": {
+    "path": "jwt.png",
+    "color": "purple"
+  },
+  "oauth2": {
+    "path": "oauth2.png",
+    "color": "grey"
+  }
+}

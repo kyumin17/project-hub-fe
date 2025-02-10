@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import data from '../data/tag_img_path.json';
+import data from '../data/tag_style.json';
 
 interface TagWrapperProps {
   isactive: boolean;
@@ -19,7 +19,7 @@ const TagWrapper = styled.div<TagWrapperProps>`
 `;
 
 const TagIcon = styled.img`
-  height: 18px;
+  height: 16px;
 `;
 
 export default function ToggleTag({ label, techList, setTechList }) {
