@@ -68,7 +68,7 @@ export default function RegisterBox({ data }) {
             {data.post_title}
           </PostTitle>
           <div>
-          에 참가 신청이 들어왔습니다!
+          에 참가 신청이 들어왔습니다
           </div>
         </Content>
         <Detail>
@@ -88,7 +88,7 @@ export default function RegisterBox({ data }) {
           </RejectButton>
         </Select>
       </BoxWrapper>
-      <AlertBox text={'수락이 완료되었습니다'} type='success' isShow={isAlertShow} setIsShow={setIsAlertShow} />
+      <AlertBox text='수락이 완료되었습니다' type='success' isShow={isAlertShow} setIsShow={setIsAlertShow} />
     </>
   );
 }

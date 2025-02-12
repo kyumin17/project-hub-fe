@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Label, Body } from '../style/MyPageStyle';
 import Post from '../../../component/Post';
 import { useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 import { PostProps } from '../../../types/post';
 
 interface ActivityBodyProps {

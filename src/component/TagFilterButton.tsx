@@ -28,7 +28,7 @@ const TagFilterButtonWrapper = styled.button`
   gap: 6px;
   align-items: center;
   padding: 5px 8px;
-  border-radius: 4px;
+  border-radius: 3px;
 `;
 
 const Label = styled.p`

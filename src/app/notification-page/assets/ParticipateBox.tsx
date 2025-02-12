@@ -23,7 +23,7 @@ export default function ParticipateBox({ data }) {
             {data.post_title}
           </PostTitle>
           <div>
-            에 참가 신청이 수락되었어요!
+            에 참가 신청이 수락되었습니다
           </div>
         </Content>
       </BoxWrapper>

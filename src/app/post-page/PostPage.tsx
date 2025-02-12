@@ -6,7 +6,7 @@ import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 
 const PostPageWrapper = styled.div`
-  padding: 0 6vw;
+  padding: 0 9vw;
 `;
 
 const PostHeader = styled.div`
@@ -33,6 +33,10 @@ const PostType = styled.div`
 
 const PostTitle = styled.div`
   font-weight: 700;
+  max-width: 50vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const RecruitNumber = styled.div`

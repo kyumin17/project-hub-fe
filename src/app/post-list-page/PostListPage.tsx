@@ -8,10 +8,10 @@ import useFetch from '../../hooks/useFetch';
 import { PostProps } from '../../types/post';
 
 const PostList = styled.div`
-  padding: 1rem 6vw 0;
+  padding: 1rem 9vw 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 `;
 
 const PaginationWrapper = styled.div`

@@ -8,8 +8,8 @@ import useAuth from '../../hooks/useAuth';
 const MyPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70px;
-  padding: 0 6vw 8vh;
+  gap: 80px;
+  padding: 0 9vw 8vh;
 `;
 
 export default function MyPage() {

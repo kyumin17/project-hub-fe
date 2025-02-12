@@ -3,11 +3,12 @@ import Tag from './Tag';
 import NoStyleLink from '../styles/LinkStyle';
 
 const PostWrapper = styled.div`
-  border: 0.5px solid #828282;
   padding: 13px 13px 10px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  border-radius: 4px;
+  border: 1px solid #e3e3e3;
 `;
 
 const PostHeader = styled.div`
@@ -26,25 +27,20 @@ const Author = styled.div`
   font-size: 0.85rem;
 `;
 
-const PostBody = styled.div`
-  display: flex;
-  line-height: 1rem;
-  gap: 5px;
-`;
-
 const Title = styled.div`
   font-weight: 500;
   font-size: 0.95rem;
+  line-height: 1rem;
 `;
 
-const RecruitNumber = styled.div`
+const RecruitNumber = styled.span`
   color: #E64B4B;
 `;
 
 const TagWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 `;
 
 export default function Post({ data }) {
@@ -60,14 +56,13 @@ export default function Post({ data }) {
             {data.author}
           </Author>
         </PostHeader>
-        <PostBody>
-          <Title>
-            {data.title}
-          </Title>
+        <Title>
+          {data.title}
+          &nbsp;&nbsp;
           <RecruitNumber>
-            {data.current_recruit}/{data.total_recruit}
+            {data.current_recruit}/{data.total_recruit === 0 ? '~' : data.total_recruit}
           </RecruitNumber>
-        </PostBody>
+        </Title>
         <TagWrapper>
           {data.tags.map((label: string) => {
             return <Tag label={label}></Tag>;

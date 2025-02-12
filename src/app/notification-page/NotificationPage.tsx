@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import { NotificationProps } from '../../types/notification';
 
 const NotificationBoxWrapper = styled.div`
-  margin: 0 6vw;
+  margin: 0 9vw;
 `;
 
 export default function NotificationPage() {

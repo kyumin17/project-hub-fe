@@ -3,13 +3,12 @@ import NoStyleLink from '../styles/LinkStyle';
 import UserMenu from './UserMenu';
 import useFetch from '../hooks/useFetch';
 import useAuth from '../hooks/useAuth';
-import { useState } from 'react';
 
 const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  padding: 1.5rem 5vw;
+  padding: 1.5rem 9vw;
 `;
 
 const Logo = styled.div`
@@ -22,7 +21,7 @@ const MenuBar = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  right: 4vw;
+  right: 9vw;
   gap: 20px;
 `;
 

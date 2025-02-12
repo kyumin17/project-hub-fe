@@ -11,7 +11,7 @@ const TagWrapper = styled.div`
 `;
 
 const TagIcon = styled.img`
-  height: 16px;
+  height: 15px;
 `;
 
 export default function Tag({ label }) {

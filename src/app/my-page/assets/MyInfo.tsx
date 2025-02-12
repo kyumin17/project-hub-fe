@@ -18,7 +18,7 @@ const Profile = styled.div`
 const Info = styled.div`
   display: grid;
   grid-template-columns: 1fr 6fr;
-  padding: 10px 0;
+  padding: 10px 20px;
   width: 100%;
 
   &:not(&:last-child) {
