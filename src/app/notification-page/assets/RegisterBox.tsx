@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { BoxWrapper, Content, PostType, PostTitle } from '../style/BoxStyle';
 import AlertBox from '../../../component/AlertBox';
+import ConfirmBox from '../../../component/ConfirmBox';
 import { useState } from 'react';
 
 const Title = styled.div`
@@ -49,9 +50,14 @@ const RejectButton = styled.button`
 
 export default function RegisterBox({ data }) {
   const [isAlertShow, setIsAlertShow] = useState(false);
+  const [isConfirmShow, setIsConfrimShow] = useState(false);
 
   function accept() {
     setIsAlertShow(true);
+  }
+
+  function reject() {
+
   }
 
   return (
@@ -83,12 +89,18 @@ export default function RegisterBox({ data }) {
           <AcceptButton onClick={accept}>
             수락하기
           </AcceptButton>
-          <RejectButton>
+          <RejectButton onClick={() => {setIsConfrimShow(true)}}>
             거절
           </RejectButton>
         </Select>
       </BoxWrapper>
       <AlertBox text='수락이 완료되었습니다' type='success' isShow={isAlertShow} setIsShow={setIsAlertShow} />
+      <ConfirmBox title={`${data.user_name}님의 가입 신청을 거절하시겠습니까?`} 
+        detail='가입 거절 시 재가입은 불가합니다'
+        accept={reject}
+        isShow={isConfirmShow}
+        setIsShow={setIsConfrimShow}
+      />
     </>
   );
 }

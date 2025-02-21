@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import usePost from '../../hooks/usePost';
 import AlertBox from '../../component/AlertBox';
 import PostInfoBox from './assets/PostInfoBox';
-import TagFilterButton from '../../component/TagFilterButton';
+import ConfirmBox from '../../component/ConfirmBox';
 
 interface TypeProps {
   isselect: boolean;
@@ -83,6 +83,7 @@ export default function PostCreatePage() {
   const [form, setForm] = useState(null);
   const [isSuccessShow, setIsSuccessShow] = useState(false);
   const [isErrorShow, setIsErrorShow] = useState(false);
+  const [isConfirmShow, setIsConfirmShow] = useState(false);
   const [errorText, setErrorText] = useState(null);
 
   const titleRef = useRef(null);
@@ -128,6 +129,10 @@ export default function PostCreatePage() {
     setTimeout(() => {navigate('/')}, 800);
   }
 
+  function cancelWriting() {
+    navigate('/');
+  }
+
   return (
     <>
       <Header />
@@ -147,13 +152,20 @@ export default function PostCreatePage() {
           <RegisterButton onClick={useRegister}>
             등록하기
           </RegisterButton>
-          <CancelButton>
+          <CancelButton onClick={() => {setIsConfirmShow(true)}}>
             취소하기
           </CancelButton>
         </div>
       </PostCreatePageWrapper>
       <AlertBox text='모집글이 등록되었습니다' type='success' isShow={isSuccessShow} setIsShow={setIsSuccessShow} />
       <AlertBox text={errorText} type='error' isShow={isErrorShow} setIsShow={setIsErrorShow} />
+      <ConfirmBox
+        title='글 작성을 취소하시겠습니까?'
+        detail='작성된 내용이 모두 삭제됩니다'
+        accept={cancelWriting}
+        isShow={isConfirmShow}
+        setIsShow={setIsConfirmShow}
+      />
     </>
   );
 }
