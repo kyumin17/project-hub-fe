@@ -4,6 +4,7 @@ import Tag from '../../component/Tag';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
+import DOMPurify from 'dompurify';
 
 const PostPageWrapper = styled.div`
   padding: 0 9vw;
@@ -132,9 +133,11 @@ export default function PostPage() {
             })}
           </TagWrapper>
         </PostHeader>}
-        <PostContent>
-          {post && post.content}
+        {post && <PostContent dangerouslySetInnerHTML={{
+          __html: DOMPurify.sanitize(post.content),
+        }}>
         </PostContent>
+        }
         <RegisterButton onClick={() => {setIsRegisterShow(!isRegisterShow)}}>
           지원하기
         </RegisterButton>
