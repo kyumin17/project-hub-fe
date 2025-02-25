@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import data from '../data/tech.json';
+import data from '../../data/tech.json';
 import ToggleTag from './ToggleTag';
 import Tag from './Tag';
 

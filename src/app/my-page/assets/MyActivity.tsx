@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Label, Body } from '../style/MyPageStyle';
-import Post from '../../../component/Post';
+import Post from '../../../component/post/Post';
 import { useState } from 'react';
 import { PostProps } from '../../../types/post';
 

@@ -3,7 +3,7 @@ import FilterButton from './FilterButton';
 import SearchBox from './SearchBox';
 import TypeMenu from './TypeMenu';
 import { useState } from 'react';
-import TagFilterButton from '../../../component/TagFilterButton';
+import TagFilterButton from '../../../component/tag/TagFilterButton';
 
 const SubBarWrapper = styled.div`
   margin: 0 9vw;

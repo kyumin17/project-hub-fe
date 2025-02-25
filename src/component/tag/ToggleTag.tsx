@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import data from '../data/tag_style.json';
+import data from '../../data/tag_style.json';
 
 interface TagWrapperProps {
   isactive: boolean;

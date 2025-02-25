@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import tagData from '../data/tag_style.json';
-import colorData from '../data/tag_color.json';
+import tagData from '../../data/tag_style.json';
+import colorData from '../../data/tag_color.json';
 
 const TagWrapper = styled.div`
   display: flex;

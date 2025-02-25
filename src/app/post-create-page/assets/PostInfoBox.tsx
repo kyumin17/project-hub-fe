@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TagFilterButton from '../../../component/TagFilterButton';
+import TagFilterButton from '../../../component/tag/TagFilterButton';
 
 const PostInfo = styled.div`
   display: flex;

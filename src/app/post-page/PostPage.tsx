@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import Header from '../../component/Header';
-import Tag from '../../component/Tag';
+import Tag from '../../component/tag/Tag';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 import DOMPurify from 'dompurify';
+import LoadingBar from '../../component/LoadingBar';
 
 const PostPageWrapper = styled.div`
   padding: 0 9vw;
@@ -111,8 +112,8 @@ export default function PostPage() {
   return (
     <>
       <Header></Header>
-      <PostPageWrapper>
-        {post && <PostHeader>
+      {post && <PostPageWrapper>
+        <PostHeader>
           <Main>
             <PostType>
               {post.type}
@@ -132,12 +133,11 @@ export default function PostPage() {
               return <Tag label={tag} key={tag} />;
             })}
           </TagWrapper>
-        </PostHeader>}
-        {post && <PostContent dangerouslySetInnerHTML={{
+        </PostHeader>
+        <PostContent dangerouslySetInnerHTML={{
           __html: DOMPurify.sanitize(post.content),
         }}>
         </PostContent>
-        }
         <RegisterButton onClick={() => {setIsRegisterShow(!isRegisterShow)}}>
           지원하기
         </RegisterButton>
@@ -147,7 +147,8 @@ export default function PostPage() {
             등록
           </EnrollButton>
         </RegisterComment>}
-      </PostPageWrapper>
+      </PostPageWrapper>}
+      {loading && <LoadingBar />}
     </>
   );
 }

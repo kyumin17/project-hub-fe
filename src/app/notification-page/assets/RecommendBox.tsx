@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Tag from '../../../component/Tag';
+import Tag from '../../../component/tag/Tag';
 import { BoxWrapper, Content, PostType, PostTitle } from '../style/BoxStyle';
 import NoStyleLink from '../../../styles/LinkStyle';
 import useAuth from '../../../hooks/useAuth';

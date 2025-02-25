@@ -5,18 +5,20 @@ import RecommendBox from './assets/RecommendBox';
 import ParticipateBox from './assets/ParticipateBox';
 import useAuth from '../../hooks/useAuth';
 import { NotificationProps } from '../../types/notification';
+import LoadingBar from '../../component/LoadingBar';
 
 const NotificationBoxWrapper = styled.div`
   margin: 0 9vw;
 `;
 
 export default function NotificationPage() {
-  const { user } = useAuth();
+  const { user, loading, error } = useAuth();
   const notificationList = user && user.notifications;
 
   return (
     <>
       <Header />
+      {loading ? <LoadingBar /> :
       <NotificationBoxWrapper>
         {notificationList && notificationList.map((data: NotificationProps) => {
           if (data.type === '신청') {
@@ -27,7 +29,7 @@ export default function NotificationPage() {
             return <ParticipateBox data={data}></ParticipateBox>;
           }
         })}
-      </NotificationBoxWrapper>
+      </NotificationBoxWrapper>}
     </>
   );
 }

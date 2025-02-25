@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import NoStyleLink from '../styles/LinkStyle';
+import useAuth from '../hooks/useAuth';
 
 interface UserMenuWrapperProps {
   isshow: boolean;
@@ -79,6 +80,7 @@ const Menu = styled.div`
 
 export default function UserMenu() {
   const [isMenuShow, setIsMenuShow] = useState(false);
+  const { user } = useAuth();
 
   return (
     <Wrapper>
@@ -92,10 +94,10 @@ export default function UserMenu() {
           </UserIcon>
           <UserInfo>
             <UserName>
-              user
+              {user && user.name}
             </UserName>
             <UserEmail>
-              aaa@sample.com
+              {user && user.email}
             </UserEmail>
           </UserInfo>
         </UserMenuHeader>

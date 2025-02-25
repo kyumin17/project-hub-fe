@@ -1,4 +1,4 @@
-import TagFilterButton from '../../../component/TagFilterButton';
+import TagFilterButton from '../../../component/tag/TagFilterButton';
 import { useState } from 'react';
 import NotificationCheckBox from '../../../component/NotificationCheckBox';
 import { Label, Body } from '../style/MyPageStyle';

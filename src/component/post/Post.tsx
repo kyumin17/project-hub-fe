@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Tag from './Tag';
-import NoStyleLink from '../styles/LinkStyle';
+import Tag from '../tag/Tag';
+import NoStyleLink from '../../styles/LinkStyle';
 
 const PostWrapper = styled.div`
   padding: 13px 13px 10px;
@@ -41,6 +41,7 @@ const TagWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  min-height: 20px;
 `;
 
 export default function Post({ data }) {
